@@ -23,10 +23,10 @@ export default defineConfig({
   reporter: [['html',{open:'always'}]],
   timeout: 180_000,
   globalTimeout: 1800000,
-  grep: /@regression/,
-  grepInvert: /@smoke/,
-  globalSetup: 'globalSetup.ts',
-  globalTeardown: 'globalTearDown.ts',
+  //grep: /@regression/,
+  //grepInvert: /@smoke/,
+  // globalSetup: 'globalSetup.ts',
+  // globalTeardown: 'globalTearDown.ts',
 
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
@@ -35,6 +35,7 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on',
+    baseURL:'https://demoqa.com/',
   },
 
   /* Configure projects for major browsers */
@@ -44,15 +45,15 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
 
     /* Test against mobile viewports. */
     // {
