@@ -52,8 +52,6 @@ test.describe(async () => {
         await expect(page.getByText('You have done a double click')).toBeVisible();
         await page.getByText('Right Click Me').click({ button: 'right' });
         await expect(page.getByText('You have done a right click')).toBeVisible();
-        const clickMeButton = page.locator('.btn btn-primary:nth-child(3)');
-        await clickMeButton.click({ force: true });
+        await page.getByRole('button', { name: 'Click Me', exact: true }).click();
         await expect(page.getByText('You have done a dynamic click')).toBeVisible();
-
     });
