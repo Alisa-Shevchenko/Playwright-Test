@@ -45,7 +45,7 @@ test.describe(async () => {
 
 });
 
-    test.('Checking button clicks', async( {page} )=> {
+    test('Checking button clicks', async( {page} )=> {
         await page.getByText('Elements').click();
         await page.getByText('Buttons').click();
         await page.getByText('Double Click Me').dblclick();
